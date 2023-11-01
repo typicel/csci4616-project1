@@ -15,6 +15,12 @@ public class VRButton : MonoBehaviour
 	public GameObject AllKnives;
 	public GameObject AllTargets;
 
+	private AudioSource _audioSource;
+
+	private void Start()
+	{
+		_audioSource = GetComponent<AudioSource>();
+	}
 	// reset knives and spawn new targets
 	public void ResetGame() {
 		Destroy(AllKnives);
@@ -33,6 +39,7 @@ public class VRButton : MonoBehaviour
             Instantiate(targetPrefabs[idx], balloonSpawnPoint, Quaternion.identity, AllTargets.transform);
 		}
 
+		_audioSource.Play();
 		GameEventManager.current.ResetGame();
 	}
 
