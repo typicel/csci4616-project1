@@ -1,0 +1,4 @@
+repository "csci4616-project1@Endatronix@cloud"
+  path "/"
+    br "/main"
+    co "/main"
